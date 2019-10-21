@@ -1,0 +1,21 @@
+Vocês foram chamados para construir a Elo4, uma startup voltada à conexão de artesãos e artesãs para a venda de produtos personalizados. Na Elo4, os clientes podem encontrar uma variedade de produtos, como artigos para festas, objetos de decoração, bijuterias, produtos religiosos, enxovais e acessórios eco-friendly. Vocês podem se inspirar olhando o site da Elo7, empresa na qual o projeto de vocês se baseia
+
+- Requisitos Técnicos
+    - Deve haver duas áreas separadas no site, uma destinada a criação de anúncios produtos e outra destinada a busca desses anúncios.
+    - Na listagem de produtos o usuário deve ser capaz:
+        - De filtrar por:
+            - Valor mínimo e máximo
+            - Categoria (uma por vez)
+            - Título ou descrição
+        - De ordernar por:
+            - Nome
+            - Preço
+            - Categoria
+    - Todo produto deve conter, no mínimo, os seguintes campos:
+        - Nome
+        - Descrição
+        - Preço
+        - Método(s) de pagamento aceito(s)
+        - Categoria
+        - Fotos (URLs)
+        - Número de parcelas
