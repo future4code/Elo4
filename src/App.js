@@ -18,7 +18,7 @@ const theme = createMuiTheme()
 
 function App() {
 	return (
-
+		
 		<JssProvider jss={jss} generateClassName={generateClassName}>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
