@@ -5,13 +5,13 @@ import Produto from '../Produto/index'
 // import PageConsumidor from '../Consumidor/PageConsumidor'
 // import Vendedor from '../Vendedor/Vendedor'
 
-const Root = styled.div`
+const Root = styled.div `
   display:flex;
   flex-direction: column;
   width: 1280px;
 `
 
-const MainContent = styled.div`
+const MainContent = styled.div `
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -20,12 +20,12 @@ const MainContent = styled.div`
 	align-items: center;
 `
 
-const Logo = styled.img`
+const Logo = styled.img `
 	width: 300px;
 	/* height: ; */
 `
 
-const ChooseButton = styled.div`
+const ChooseButton = styled.div `
 	display: flex;
 	
 `
@@ -48,33 +48,27 @@ const ChooseButton = styled.div`
 // 	</div>
 // }
 
-function Integrar(props) {
-	if (props.ProductPage) {
-		return (<Produto />)
-	}
-	// return (<ListaDeUsuario />)
-}
 
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			ProductPage: false,
+			currentPage: "Home",
 		};
 	}
 
-	// onClickButtonProvider = () => {
-	// 	if (this.state.currentPage === "Home") {
-	// 		this.setState({
-	// 			currentPage: "Produto",
-	// 		})
-	// 	} else { console.log("erro") }
-	// }
-
-	aoClicar = () => {
-		// this.msgBotao = this.state.cadastrado ? "Lista de Nomes" : "Volte";
-		this.setState({ ProductPage: !this.state.ProductPage })
+	onClickButtonProvider = () => {
+		if (this.state.currentPage === "Home") {
+			this.setState({
+				currentPage: "Produto",
+			})
+		} else { console.log("erro") }
 	}
+
+	// aoClicar = () => {
+	// 	// this.msgBotao = this.state.cadastrado ? "Lista de Nomes" : "Volte";
+	// 	this.setState({ productPage: !this.state.productPage })
+	// }
 
 	render() {
 
@@ -83,12 +77,11 @@ class Home extends React.Component {
 				<MainContent>
 					<Logo src={logoElo4} alt="logoElo4" />
 					<ChooseButton>
-						{/* {
+						{
 							this.state.currentPage === "Home" ? <Home /> : <Produto />
-						} */}
+						}
 
 						<button>Quero Vender</button>
-						<Integrar ProductPage={!this.state.ProductPage} />  
 						<button onClick={this.aoClicar}>Quero Comprar</button>
 					</ChooseButton>
 				</MainContent>
