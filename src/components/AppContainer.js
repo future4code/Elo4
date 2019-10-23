@@ -15,6 +15,7 @@ export class AppContainer extends React.Component {
 			<div>
 				<Home />
 				<Produto />
+				<Vendedor />
 			</div>
 
 		)
