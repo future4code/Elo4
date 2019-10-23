@@ -9,10 +9,13 @@ export class AppContainer extends React.Component {
 	}
 
 	render() {
-		return <div>
-			<Home />
-      <Produto />
-		</div>
+		return (
+		
+			<div>
+				<Home />
+				<Produto />
+			</div>
+
 		)
 	}
 }
