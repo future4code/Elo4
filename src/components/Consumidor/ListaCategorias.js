@@ -20,7 +20,6 @@ const TituloCategorias = styled.h3 `
 margin-left:10vh;
 `
 
-
 export class ListaCategorias extends React.Component {
     constructor(props) {
       super(props);
