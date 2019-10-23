@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import logoElo4 from "../Homepage/images/logoElo4.png";
 
-const LogoProdutos = styled.img`
+const LogoProdutos = styled.img `
 	width: 100px;
 	height: 100%;
 `

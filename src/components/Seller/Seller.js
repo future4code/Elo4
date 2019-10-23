@@ -2,11 +2,16 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-export default class Vendedor extends React.Component {
+const Title = styled.h1 `
+	display: flex;
+	flex-direction: center;
+`
+
+export default class Seller extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Vendedor</h1>
+				<Title>Vendedor</Title>
 				<label htmlFor="selectCategoria">Categoria:  </label>
 					<select id="selectCategoria">
 						<option>Decoração</option>
