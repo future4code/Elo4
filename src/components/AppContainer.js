@@ -1,4 +1,6 @@
 import React from 'react'
+import Produto from './Produto'
+
 
 export class AppContainer extends React.Component {
 	constructor(props) {
@@ -6,8 +8,10 @@ export class AppContainer extends React.Component {
 	}
 
 	render() {
-		return <div>
-			
+		return (
+		<div>
+			<Produto/>
 		</div>
+		)
 	}
 }
