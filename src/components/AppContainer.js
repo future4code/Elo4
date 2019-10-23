@@ -3,7 +3,7 @@ import CardProduct from './sectionProduct/cardProduct'
 import Home from './Homepage/Home'
 import Produto from './Produto'
 import {PageConsumidor} from './Consumidor/PageConsumidor'
-import Vendedor from './Vendedor/Vendedor.js'
+import Seller from './Seller/Seller.js'
 
 
 export class AppContainer extends React.Component {
@@ -17,7 +17,7 @@ export class AppContainer extends React.Component {
 				<PageConsumidor/>
 				<Home />
 				<Produto />
-				<Vendedor />
+				<Seller />
         <CardProduct />
 			</div>
 		)
