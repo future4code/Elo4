@@ -6,6 +6,7 @@ import {PageConsumidor} from './Consumidor/PageConsumidor'
 import Vendedor from './Vendedor/Vendedor.js'
 
 
+
 export class AppContainer extends React.Component {
 	constructor(props) {
 		super(props)
