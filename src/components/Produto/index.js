@@ -1,7 +1,12 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
+import logoElo4 from "../Homepage/images/logoElo4.png";
 
+const LogoProdutos = styled.img`
+	width: 100px;
+	height: 100%;
+`
 
 const ContainerProduto = styled.div `
 	margin: 0;
@@ -84,7 +89,9 @@ class Produto extends React.Component {
 		return(
 			<ContainerProduto>
 				<HeaderProduto>
-					<h1>Logo</h1>
+	
+					<LogoProdutos src={logoElo4} alt="logoElo4" />
+
 				</HeaderProduto>
 
 				<MainProduto>
