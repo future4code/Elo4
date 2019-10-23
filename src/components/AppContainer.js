@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from './Homepage/Home'
 import Produto from './Produto'
 
 
@@ -8,9 +9,9 @@ export class AppContainer extends React.Component {
 	}
 
 	render() {
-		return (
-		<div>
-			<Produto/>
+		return <div>
+			<Home />
+      <Produto />
 		</div>
 		)
 	}
