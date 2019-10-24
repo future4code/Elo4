@@ -4,6 +4,7 @@ import Home from './Homepage/Home'
 import logoElo4 from '../assets/imgs/logo1.png'
 import Consumidor from './Consumidor/'
 import Vendedor from './Vendedor/'
+import Produto from './Produto/'
 
 const Logo = styled.img`
 	width: 150px;
@@ -24,6 +25,8 @@ export class AppContainer extends React.Component {
 				return <Vendedor/>
 			case 'Consumidor':
 				return <Consumidor/>
+			case 'Produto':
+				return <Produto/>
 			case 'Home':
 				return <Home onChangePage={this.goToPage} />
 			default:

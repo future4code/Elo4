@@ -13,6 +13,7 @@ const StyledCardActionArea = styled(CardActionArea)`
 `
 const StyledCard = styled(Card)`
 	width:200px;
+	
 `
 
 const StyledCardMedia = styled(CardMedia)`

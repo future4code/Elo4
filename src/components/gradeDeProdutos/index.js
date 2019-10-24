@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CardProduct from '../sectionProduct/cardProduct/';
+import Produto from '../Produto/'
 
 const Section = styled.div `
 	display: grid;
@@ -62,10 +63,30 @@ class GradeDeProdutos extends React.Component{
 					url2:"https://images.unsplash.com/photo-1509781827353-fb95c262fc40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80",
 					url3:"https://images.unsplash.com/photo-1505692069463-edfaea445fcd?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
 				},
-			]
+			],
+			paginaAtual: "todosOsProdutos",
+			textoButton: "Produto"
 		}
 	}
 
+	onClickButtonListaVoltar = () =>  {
+		if(this.state.paginaAtual === "todosOsProdutos") {
+		  this.setState({
+			paginaAtual: "produto",
+			textoButton: "Todos os Produtos"
+		  })
+		} else {
+		  this.setState({
+			paginaAtual: "todosOsProdutos",
+			textoButton: "Lista de Usuários"
+		  })
+		}
+	  }
+	
+	/*onChangePageProduct = (event) =>{
+		return <Produto />
+	}*/
+	
 	render(){
 		return(
 			<Section>

@@ -14,7 +14,6 @@ const Section = styled.div`
 	padding: 10px;
 `
 
-
 export function Consumidor() {
 	return (
 		<Fragment>
