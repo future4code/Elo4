@@ -68,34 +68,17 @@ class GradeDeProdutos extends React.Component{
 			textoButton: "Produto"
 		}
 	}
+	
+	paiImprimeProduto = (produto) => {
+		console.log(produto)
+	}
 
-	onClickButtonListaVoltar = () =>  {
-		if(this.state.paginaAtual === "todosOsProdutos") {
-		  this.setState({
-			paginaAtual: "produto",
-			textoButton: "Todos os Produtos"
-		  })
-		} else {
-		  this.setState({
-			paginaAtual: "todosOsProdutos",
-			textoButton: "Lista de Usuários"
-		  })
-		}
-	  }
-	
-	/*onChangePageProduct = (event) =>{
-		return <Produto />
-	}*/
-	
 	render(){
 		return(
 			<Section>
-				<CardProduct />
-				<CardProduct />
-				<CardProduct />
-				<CardProduct />
-				<CardProduct />
-				<CardProduct />
+				{this.state.listaDeProdutos.map(produto => {
+					return <CardProduct informacaoProduto ={produto} passarProdutoParaOPai={this.paiImprimeProduto}/>
+				}) }
 			</Section>
 		)
 	}
