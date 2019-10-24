@@ -5,6 +5,7 @@ import Produto from '../Produto/'
 import Consumidor from '../Consumidor/'
 import Vendedor from '../Vendedor/'
 import Button from '@material-ui/core/Button';
+import logoElo4 from './images/logoElo4.png';
 
 const Root = styled.div`
   display:flex;
@@ -19,8 +20,18 @@ const MainContent = styled.div`
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	justify-content: center;
+	justify-content: top;
 	align-items: center;
+`
+const Folder = styled.div`
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin: 40px 0;
+`
+
+const LogoFolder = styled.img`
+	width: 300px;
 `
 
 const ChooseButton = styled.div`
@@ -36,6 +47,9 @@ const Home = (props) => {
 	return (
 		<Root>
 			<MainContent>
+				<Folder>
+					<LogoFolder src={logoElo4} alt="LogoFolder" />
+				</Folder>
 				<ChooseButton>
 					<Button variant="contained" size="large" onClick={() => props.onChangePage('Vendedor')}>
 						Quero Vender
