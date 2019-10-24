@@ -9,8 +9,8 @@ import GradeDeProdutos from '../gradeDeProdutos/'
 
 const Section = styled.div`
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
+	grid-template-columns: 1fr 3fr 1fr ;
+	grid-column-gap:50px;
 	padding: 10px;
 `
 

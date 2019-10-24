@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import CardProduct from '../sectionProduct/cardProduct/';
 
-const section = styled.div `
+const Section = styled.div `
 	display: grid;
-	grid-template-column: 1fr, 1fr, 1fr;
-	grid-template-row: 1fr, 1fr, 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap:30px;
+	grid-column-gap:30px;
 `
 
 class GradeDeProdutos extends React.Component{
@@ -67,9 +68,14 @@ class GradeDeProdutos extends React.Component{
 
 	render(){
 		return(
-			<section>
-				<CardProduct/>
-			</section>
+			<Section>
+				<CardProduct />
+				<CardProduct />
+				<CardProduct />
+				<CardProduct />
+				<CardProduct />
+				<CardProduct />
+			</Section>
 		)
 	}
 }
