@@ -13,19 +13,26 @@ const StyledCardActionArea = styled(CardActionArea)`
 `
 const StyledCard = styled(Card)`
 	width:200px;
+	
+`
+
+const StyledCardMedia = styled(CardMedia)`
+	width:200px;
+	height:120px;
 `
 
 class CardProduct extends React.Component {
 	constructor(props){
 		super(props)
+
 	}
 
 	render(){
 		return(
 			<StyledCard>
 				<StyledCardActionArea >
-					<CardMedia 
-						image="https://picsum.photos/id/237/200/200"
+					<StyledCardMedia 
+						image="https://picsum.photos/id/237/200/150"
 						title="Vaso de barro rústico"
 					/>
 					<CardContent>

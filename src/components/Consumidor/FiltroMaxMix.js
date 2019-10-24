@@ -7,7 +7,7 @@ width: 60vh;
 `
 
 
-export class FiltroMaxMin extends React.Component {
+class FiltroMaxMin extends React.Component {
     constructor(props) {
       super(props);
     }
@@ -24,4 +24,6 @@ export class FiltroMaxMin extends React.Component {
         </div>
       );
     }
-  }
+}
+
+export default FiltroMaxMin;
