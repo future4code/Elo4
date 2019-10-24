@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styled from "styled-components"
 import {ListaCategorias} from './ListaCategorias.js'
 import {HeaderElo4} from './header'
-import {FiltroMaxMin} from './FiltroMaxMix'
+import FiltroMaxMin from './FiltroMaxMix'
+import GradeDeProdutos from '../gradeDeProdutos/'
 
 
 const Section = styled.div`
@@ -20,6 +21,7 @@ export function Consumidor() {
 			<HeaderElo4/>
 			<Section>
 				<ListaCategorias/> 
+				<GradeDeProdutos />
 				<FiltroMaxMin/>  
 			</Section>
 		</Fragment>
