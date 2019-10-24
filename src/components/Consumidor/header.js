@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from "styled-components";
-import logo1 from "./logo1.png"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import logo1 from '../../assets/imgs/logo1.png'
 
 const Logo1 = styled.img `
 width:18vh;
