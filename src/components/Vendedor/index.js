@@ -12,6 +12,7 @@ export default class Vendedor extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+		name: '',	
 		selectCategoria: '',
 		descricaoProduto: '',
 		preco: '',
@@ -24,6 +25,7 @@ export default class Vendedor extends React.Component {
 	
 	addNewProduct = () => {
 		const data = {
+			name: this.state.name,
 			category: this.state.selectCategoria,
 			description: this.state.descricaoProduto,
 			price: this.state.preco,
@@ -54,7 +56,7 @@ export default class Vendedor extends React.Component {
 	}
 
 	onChangePriceProduct = (event) => {
-		this.setState({preco: event.target.value})
+		this.setState({preco: Number(event.target.value)})
 	}
 
 	onChangePayment = (event) => {
@@ -63,11 +65,15 @@ export default class Vendedor extends React.Component {
 
 
 	onChangeUrl = (event) => {
-		this.setState({url: event.target.value})
+		this.setState({url: [event.target.value]})
 	}
 
 	onChangeInstallments = (event) => {
-		this.setState({parcelas: event.target.value})
+		this.setState({parcelas: Number(event.target.value)})
+	}
+
+	onChangeName = (event) => {
+		this.setState({name: event.target.value})
 	}
 
 
@@ -75,10 +81,19 @@ export default class Vendedor extends React.Component {
 		return (
 			<div>
 				<Title>Vendedor</Title>
+
+				<label htmlFor="nome">Nome</label>
+				<input type="text"
+					onChange={this.onChangeName} 
+					value={this.state.name}
+					name='nome'
+				/>
+
+
 				<label htmlFor="selectCategoria">Categoria:  </label>
 
 				<select 
-					id="selectCategoria" 
+					name="selectCategoria" 
 					onChange={this.onChangeCategory} 
 					value={this.state.selectCategoria}
 				>
@@ -90,8 +105,7 @@ export default class Vendedor extends React.Component {
 
 				<div>
 					<p>Descrição do produto: </p>
-					<input 
-						type="text-area" 
+					<textarea
 						onChange={this.onChangeDescriptionProduct} 
 						value={this.state.descricaoProduto}
 					/>
@@ -107,9 +121,9 @@ export default class Vendedor extends React.Component {
 				</div>
 
 				<div>
-					<p>Meios de pagamento:</p>
+					<label htmlFor="selectPayment">Meios de pagamento</label>
 					<select
-					 	id="selectPayment" 
+					 	name="selectPayment" 
 						onChange={this.onChangePayment} 
 						value={this.state.selectPayment}
 					>
