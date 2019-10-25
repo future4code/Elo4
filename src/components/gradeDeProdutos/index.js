@@ -24,7 +24,7 @@ class GradeDeProdutos extends React.Component {
 		return (
 			<div>
 				{this.props.listaDeProdutos.map(produto => {
-					return <CardProduct onChangePage={this.props.goToPage} informacaoProduto={produto} passarProdutoParaOPai={this.paiImprimeProduto} />
+					return <CardProduct onChangePage={this.props.goToPage} informacaoProduto={produto} passarProdutoParaOPai={this.paiImprimeProduto} onChangeSelectedProduct={this.props.onChangeSelectedProduct} />
 				})}
 			</div>
 		)

@@ -71,17 +71,24 @@ class Consumidor extends React.Component {
 		this.state = {
 			listaDeProdutos: listaDeProdutos,
 			currentPage: 'ListaDosProdutos',
+			selectedProduct: undefined,
 			categoriaSelecionada:"Todas as Categorias"
+
 		}
 		
 	}
+
+
+	onChangeSelectedProduct = (product) => {
+		this.setState({selectedProduct:product})
+	}
+
 
 	mudarCategoria = (novaCategoria) =>{
 		this.setState({
 			categoriaSelecionada: novaCategoria
 		})
 	}
-
 
 	goToPage = (pageName) => {
 		this.setState({ currentPage: pageName })
@@ -106,13 +113,13 @@ class Consumidor extends React.Component {
 	getCurrentPage = () => {
 		switch (this.state.currentPage) {
 			case 'InformacaoDoProduto':
-				return <Produto />
+				return <Produto informacaoProduto={this.state.selectedProduct}/>
 			case 'ListaDosProdutos':
 				const listaDeProdutosFiltrada = this.filtrarLista()
 				return (
 					<Section>
 						<ListaCategorias mudarCategoria={this.mudarCategoria} />
-						<GradeDeProdutos currentPage={this.state.currentPage} listaDeProdutos={listaDeProdutosFiltrada} goToPage={this.goToPage} />
+						<GradeDeProdutos currentPage={this.state.currentPage} listaDeProdutos={listaDeProdutosFiltrada} goToPage={this.goToPage} onChangeSelectedProduct={this.onChangeSelectedProduct} />
 						<FiltroMaxMin />
 					</Section>)
 			default:
