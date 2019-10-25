@@ -22,18 +22,29 @@ margin-left:10vh;
 
 export class ListaCategorias extends React.Component {
     constructor(props) {
-      super(props);
+	  super(props);
+	  this.state={
+		  categoriaSelecionada:"Todas as Categorias"
+	  }
     }
   
+	mudarCategoria = (novaCategoria) =>{
+		this.setState({
+			categoriaSelecionada: novaCategoria
+		})
+		this.props.aoMudarCategoria(novaCategoria)
+	}
+
     render() {
       return (
         <div>
             <Categorias>
                 <TituloCategorias> Categorias </TituloCategorias> 
                 <ListaCates>
-                    <Li><a href="#">Saúde e Bem Estar</a></Li>
-                    <Li><a href="#">Decoração</a></Li>
-                    <Li><a href="#">Brinquedos</a></Li>
+                    <Li onClick={() => { this.mudarCategoria("Saúde e Bem Estar") }}><u>Saúde e Bem Estar</u></Li>
+                    <Li onClick={() => { this.mudarCategoria("Decoração") }}><u>Decoração</u></Li>
+                    <Li onClick={() => { this.mudarCategoria("Brinquedos") }}><u>Brinquedos</u></Li>
+					<Li onClick={() => { this.mudarCategoria("Todas as Categorias") }}><u>Todas as categorias</u></Li>
                 </ListaCates>
             </Categorias>
         </div>
