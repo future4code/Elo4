@@ -20,6 +20,7 @@ class GradeDeProdutos extends React.Component {
 	}
 
 	getCurrentPage = () => {
+		
 		return (
 			<div>
 				{this.props.listaDeProdutos.map(produto => {
