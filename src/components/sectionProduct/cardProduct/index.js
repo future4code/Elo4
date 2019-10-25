@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -6,7 +7,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
-import Produto from '../../Produto/'
+import Produto from '../../Produto/';
+import Consumidor from '../../Consumidor/';
+import GradeDeProdutos from '../../gradeDeProdutos/';
 
 const StyledCardActionArea = styled(CardActionArea)`
 	width:200px;
@@ -21,37 +24,23 @@ const StyledCardMedia = styled(CardMedia)`
 	width:200px;
 	height:120px;
 `
-
-class CardProduct extends React.Component {
-	constructor(props) {
+class CardProduct extends React.Component{
+	constructor(props){
 		super(props)
-		this.state = {
-			currentPage: 'Consumidor'
-		}
-
 	}
 
-	// onClickTest = (pageName) => {
-	// 	this.setState({ currentPage: pageName })
+	// printProduto = (produto) => {
+	// 	console.log(produto)
 	// }
 
-	printProduto = (produto) => {
-		console.log(produto)
-	}
-
-	chamaPaginaProduto = (event) => {
-		return <Produto />
-	}
-
-	render() {
-
-		return (
+	render(){
+	return (
 			<StyledCard>
-				<StyledCardActionArea onClick={ () => {this.props.passarProdutoParaOPai(this.props.informacaoProduto)}}
-				// onClickPageDescription = {this.chamaPaginaProduto()}
-				>
+				
+				{/* <StyledCardActionArea onClick={() => { this.props.passarProdutoParaOPai(this.props.informacaoProduto) }}> */}
+				<StyledCardActionArea onClick={() => this.props.onChangePage('InformacaoDoProduto')}>
 
-					<StyledCardMedia
+					<StyledCardMedia 
 						image={this.props.informacaoProduto.url1}
 						title={this.props.informacaoProduto.name}
 					/>
@@ -69,17 +58,15 @@ class CardProduct extends React.Component {
 					</CardContent>
 				</StyledCardActionArea >
 				<Button variant="contained" size="large" color="primary" >
-				{/* {this.state.currentPage === 'Produto' ? <Produto /> : <h1>Foi tambem</h1> } */}
-				{/* <Button onClick={() => this.onClickTest('Produto')}> */}
 					Comprar
 				</Button>
 			</StyledCard>
 		);
-			}
-		}
-		
-// pageName.propTypes = {
-// 	onChangePage: PropTypes.func.isRequired,
-// }
+	}
+}
+
+CardProduct.propTypes = {
+	onChangePage: PropTypes.func.isRequired,
+}
 
 export default CardProduct;
