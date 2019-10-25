@@ -13,16 +13,31 @@ const Section = styled.div`
 	padding: 10px;
 `
 
-export function Consumidor() {
-	return (
-		<Fragment>
-			<Section>
-				<ListaCategorias/> 
-				<GradeDeProdutos />
-				<FiltroMaxMin/>  
-			</Section>
-		</Fragment>
-	)
+class Consumidor extends React.Component {
+	constructor(props){
+		super(props)
+		this.state={
+			filtroDeCategoria:"Todas as Categorias"
+		}
+	}
+	
+	recebeFiltroDeCategoria = (categoria) => {
+		this.setState({
+			filtroDeCategoria:categoria
+		})
+	}
+
+	render(){
+		return (
+			<Fragment>
+				<Section>
+					<ListaCategorias aoMudarCategoria={this.recebeFiltroDeCategoria}/> 
+					<GradeDeProdutos filtroDeCategoria={this.state.filtroDeCategoria}/>
+					<FiltroMaxMin/>  
+				</Section>
+			</Fragment>
+		)
+	}
 }
   
-export default Consumidor
+export default Consumidor;
