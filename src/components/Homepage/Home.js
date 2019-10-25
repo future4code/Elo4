@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
-import Produto from '../Produto/'
-import Consumidor from '../Consumidor/'
-import Vendedor from '../Vendedor/'
 import Button from '@material-ui/core/Button';
 import logoElo4 from './images/logoElo4.png';
 
 const Root = styled.div`
   display:flex;
   flex-direction: column;
-  width: 1280px;
+  width: 100vw;
   height: 91vh;
   background-color: #E7E2FC;
 `
@@ -23,6 +20,7 @@ const MainContent = styled.div`
 	justify-content: top;
 	align-items: center;
 `
+
 const Folder = styled.div`
 	display: flex;
 	width: 100%;
