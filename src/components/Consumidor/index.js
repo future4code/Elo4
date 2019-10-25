@@ -104,4 +104,5 @@ class Consumidor extends React.Component {
 
 
 
-export default Consumidor
+export default Consumidor;
+

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 import logoElo4 from './images/logoElo4.png';
 
-const Root = styled.div`
+const Root = styled.div `
   display:flex;
   flex-direction: column;
   width: 100vw;
@@ -12,7 +12,7 @@ const Root = styled.div`
   background-color: #E7E2FC;
 `
 
-const MainContent = styled.div`
+const MainContent = styled.div `
 	display: flex;
 	flex-direction: column;
 	width: 100%;
