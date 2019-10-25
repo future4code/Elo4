@@ -33,12 +33,17 @@ class CardProduct extends React.Component{
 	// 	console.log(produto)
 	// }
 
+	onClickProductCard = () => {
+		this.props.onChangePage('InformacaoDoProduto')
+		this.props.onChangeSelectedProduct(this.props.informacaoProduto)
+	}
+
 	render(){
 	return (
 			<StyledCard>
 				
 				{/* <StyledCardActionArea onClick={() => { this.props.passarProdutoParaOPai(this.props.informacaoProduto) }}> */}
-				<StyledCardActionArea onClick={() => this.props.onChangePage('InformacaoDoProduto')}>
+				<StyledCardActionArea onClick={this.onClickProductCard}>
 
 					<StyledCardMedia 
 						image={this.props.informacaoProduto.url1}

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import axios from "axios";
 import styled from "styled-components";
 import logoElo4 from "../Homepage/images/logoElo4.png";
@@ -16,13 +17,6 @@ const ContainerProduto = styled.div `
 	grid-row-gap: 40px;
 `
 
-const HeaderProduto = styled.div `
-	width: 100%;
-	height: 100px;
-	background: #a30000; 
-	display: flex;
-	justify-items: center;
-`
 const MainProduto = styled.div `
 	display: grid;
 	justify-items: center;
@@ -81,19 +75,24 @@ class Produto extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			currentPage: 'InformacaoDoProduto',
+			listaDeProdutos: ''
 		}
 	}
+
+	// getCurrentPage = () => {
+	// 	return (
+	// 		<div>
+	// 			{this.props.listaDeProdutos.map(produto => {
+	// 				return <CardProduct onChangePage={this.props.goToPage} informacaoProduto={produto} passarProdutoParaOPai={this.paiImprimeProduto} />
+	// 			})}
+	// 		</div>
+	// 	)
+	// }
 
 	render () {
 		return(
 			<ContainerProduto>
-				<HeaderProduto>
-	
-					<LogoProdutos src={logoElo4} alt="logoElo4" />
-
-				</HeaderProduto>
-
 				<MainProduto>
 
 					<ContainerFoto>
@@ -101,10 +100,12 @@ class Produto extends React.Component {
 					</ContainerFoto>
 
 					<ContainerDescricao>
-						<h2>Nome Do Produto</h2>
+						<h2> 
+						{this.props.informacaoProduto.name}
+						</h2>
 						<p>Categoria do Produto</p>
 						<DescricaoProduto>
-							<p>Ajsdfksfsdfjkhsdfhsjfsdfhjkfsdhjfksfhjksfsfjkhsdjkfsdhf GDFGSFAFADFAFAFAFfsfsfsfsdfsdfsdf</p>
+							<p>Inserir descrição do produto</p>
 						</DescricaoProduto>
 					</ContainerDescricao>
 
@@ -121,7 +122,10 @@ class Produto extends React.Component {
 								<option>5</option>
 							</select>
 						
-							<h3>Preço:</h3>
+							<h3>Preço: 
+							{this.props.informacaoProduto.price}
+							
+							</h3>
 						</div>
 						<button>Comprar</button>
 					</ContainerMeiosPag>
@@ -129,9 +133,11 @@ class Produto extends React.Component {
 				</MainProduto>
 
 				<ContainerFotos>
-					<Foto1>Foto 1</Foto1>
-					<Foto2>Foto 2</Foto2>
-					<Foto3>Foto 3</Foto3>
+					<Foto1 
+					image={this.props.informacaoProduto.url1} 
+					/>
+					<Foto2 image={this.props.informacaoProduto.url2}  />
+					<Foto3 image={this.props.informacaoProduto.url3}  />
 				</ContainerFotos>
 			</ContainerProduto>
 		)

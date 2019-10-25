@@ -68,7 +68,12 @@ class Consumidor extends React.Component {
 				},
 			],
 			currentPage: 'ListaDosProdutos',
+			selectedProduct: undefined,
 		}
+	}
+
+	onChangeSelectedProduct = (product) => {
+		this.setState({selectedProduct:product})
 	}
 
 	goToPage = (pageName) => {
@@ -78,12 +83,12 @@ class Consumidor extends React.Component {
 	getCurrentPage = () => {
 		switch (this.state.currentPage) {
 			case 'InformacaoDoProduto':
-				return <Produto />
+				return <Produto informacaoProduto={this.state.selectedProduct}/>
 			case 'ListaDosProdutos':
 				return (
 					<Section>
 						<ListaCategorias />
-						<GradeDeProdutos currentPage={this.state.currentPage} listaDeProdutos={this.state.listaDeProdutos} goToPage={this.goToPage} />
+						<GradeDeProdutos currentPage={this.state.currentPage} listaDeProdutos={this.state.listaDeProdutos} goToPage={this.goToPage} onChangeSelectedProduct={this.onChangeSelectedProduct} />
 						<FiltroMaxMin />
 					</Section>)
 			default:
